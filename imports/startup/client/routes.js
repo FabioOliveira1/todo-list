@@ -1,21 +1,25 @@
-import { FlowRouter } from 'meteor/kadira:flow-router';
-import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import React from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory'
 
-// Import needed templates
-import '../../ui/layouts/body/body.js';
-import '../../ui/pages/home/home.js';
-import '../../ui/pages/not-found/not-found.js';
 
+import  AppBody  from '../../ui/layouts/AppBody.js'
+import  Dashboard  from '../../ui/layouts/Dashboard.js'
+
+const history = createBrowserHistory();
+console.log("history: ", history);
+console.log("AppBody: ", AppBody);
+console.log("Dashboard: ", Dashboard);
 // Set up all routes in the app
-FlowRouter.route('/', {
-  name: 'App.home',
-  action() {
-    BlazeLayout.render('App_body', { main: 'App_home' });
-  },
+Meteor.startup(() => {
+	render(
+		<Router history={history}>
+			<div>
+				<Route exact path="/" component={ AppBody }/>
+				<Route path="/dashboard" component={Dashboard} />
+			</div>
+		</Router>,
+		document.getElementById('app-container')
+	);
 });
-
-FlowRouter.notFound = {
-  action() {
-    BlazeLayout.render('App_body', { main: 'App_notFound' });
-  },
-};
