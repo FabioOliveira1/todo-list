@@ -1,0 +1,56 @@
+a{
+	text-decoration:none;
+}
+html, body{
+	background: transparent url('/img/layouts/app-body/background0.png');
+	height: 100%;
+}
+#app-container{
+	height: 100%;
+}
+#routes-container{
+	height: 100%;
+}
+
+/*======== COMPANY LOGO ===========*/
+	.mdl-card__company-logo{
+		width: 40px;
+		height: 40px;
+	}
+
+/*======== LOGIN BLOCK ==============*/
+	.login{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+
+	.login__login-card.mdl-card {
+		width: 460px;
+	}
+	.login__login-card > .mdl-card__title {
+		color: #ffda44;
+		height: 176px;
+		background: url('/img/components/login-card/background4.jpg') center / cover ;
+	}
+	.login__login-card  .mdl-card__title-text{
+		line-height: 40px;
+	}
+	.login__login-card .mdl-card__company-logo{
+		margin-right: 10px;
+	}
+	.login__login-card > .mdl-card__menu {
+	 	color: #fff;
+	}
+
+	.login__login-card > .mdl-card__actions{
+		text-align: center;
+	}
+	.login__login-card .forgot-password__disclamer{
+		cursor: pointer;
+	}
+	.login__login-card .forgot-password__disclamer:hover{
+	  	color: #ffc933;
+		cursor: pointer;
+	}
