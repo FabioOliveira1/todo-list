@@ -1,28 +1,38 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory'
 
 import  AppBody  from '../../ui/layouts/AppBody.js';
 import  Dashboard  from '../../ui/layouts/Dashboard.js';
 import  Login  from '../../ui/layouts/Login.js';
+import  NotFound  from '../../ui/layouts/NotFound.js';
 
 const history = createBrowserHistory();
 const requireAuth = (currentState) => {
-	console.log(currentState);
-	return (false) ? (<Redirect to="/main" />) : (<Redirect to="/login" />)
+	if(Meteor.user() || Meteor.loggingIn()){
+		console.log("User: ", Meteor.user());
+		console.log("LoggingIn: ", Meteor.loggingIn());
+		return true;
+	}
+
+		console.log("props: ", this.props);
+	console.log("No user: ", Meteor.user());
+	return false;
 }
 
 // Set up all routes in the app
 Meteor.startup(() => {
 	render(
 		<Router history={history}>
-			<div id="routes-container">
-				<Route exact path="/" render={requireAuth} />
-				<Route path="/main" render={requireAuth} />
-				<Route path="/dashboard"  render={requireAuth}  />
-				<Route path="/login" component={Login}  />
-			</div>
+			<Switch>
+				<Route exact path="/" render={()=>((requireAuth()) ? <Redirect to="/dashboard" /> : <Redirect to="/login" />)} />
+				<Route path="/login" render={()=>((requireAuth()) ? <Redirect to="/dashboard" /> : <Login {...this.props} />)}  />
+				<Route exact path="/dashboard"  render={()=>((requireAuth()) ? <Dashboard /> : <Redirect to="/login" />)}  />
+				<Route exact path="/dashboard/:id"  render={()=>((requireAuth()) ? <Dashboard /> : <Redirect to="/login" />)}  />
+				<Route exact path="/not-found" render={ ()=>(<NotFound />) } />
+				<Redirect to="/not-found"/>
+			</Switch>
 		</Router>,
 		document.getElementById('app-container')
 	);

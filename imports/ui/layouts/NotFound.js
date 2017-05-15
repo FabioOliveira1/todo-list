@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 
-export default class Dashboard extends Component{
+export default class NotFound extends Component{
 
 	constructor(){
 		super();
@@ -10,8 +10,8 @@ export default class Dashboard extends Component{
 	render(){
 		return (
 			<div className="app-body">
-				<div>Dashboard</div>
-				<a href="/main">AppBody</a>
+				<div>NotFound</div>
+				<a href="/dashboard">Dashboard</a>
 			</div>
 		)
 	}

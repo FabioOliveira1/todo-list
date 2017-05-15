@@ -50,7 +50,7 @@ export default class LoginCard extends Component{
 				</div>
 				<div className="mdl-card__actions mdl-card--border">
 
-					<form action="#" onSubmit={this.submit.bind(this)}>
+					<form id="form-submit-login" onSubmit={(e)=>{e.preventDefault(); this.props._doLogin(this.state.email,this.state.password);}}>
 						<div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 							<input
 								className="mdl-textfield__input"
@@ -74,7 +74,9 @@ export default class LoginCard extends Component{
 						</div>
 
 						<div>
-							<button className="mdl-button mdl-js-button mdl-button--raised mdl-color--yellow-100 mdl-button--raised mdl-js-ripple-effect">
+							<button className="mdl-button mdl-js-button mdl-button--raised mdl-color--yellow-100 mdl-button--raised mdl-js-ripple-effect"
+								form="form-submit-login"
+							>
 								Entrar
 							</button>
 
