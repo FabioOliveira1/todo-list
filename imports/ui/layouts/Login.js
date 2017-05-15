@@ -6,23 +6,25 @@ import React, { Component } from 'react';
 import createBrowserHistory from 'history/createBrowserHistory'
 //Custom Components
 import LoginCard from '../components/LoginCard.js';
+//Bert alert
+import { Bert } from 'meteor/themeteorchef:bert';
 
 const history  = createBrowserHistory();
 export default class Login  extends Component{
-	constructor(){
-		super();
-		this.state ={
-			errorMessage: false
-		}
-	}
 
 	_doLogin(e,p){
 			Meteor.logout();
 			Meteor.loginWithPassword({email:e},p,(error)=>{
 				if(error){
 					console.log("error.message: ", error.message)
+					Bert.alert({
+						message: error.message,
+						type: "danger",
+						style: "growl-top-right",
+						icon: "fa-times"
+					});
 				}else{
-					console.log("Success!");
+					console.log("Logging in!");
 					history.push("/dashboard");
 					history.go(0);
 				}

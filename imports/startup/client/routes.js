@@ -16,7 +16,6 @@ const requireAuth = (currentState) => {
 		return true;
 	}
 
-		console.log("props: ", this.props);
 	console.log("No user: ", Meteor.user());
 	return false;
 }
@@ -27,7 +26,7 @@ Meteor.startup(() => {
 		<Router history={history}>
 			<Switch>
 				<Route exact path="/" render={()=>((requireAuth()) ? <Redirect to="/dashboard" /> : <Redirect to="/login" />)} />
-				<Route path="/login" render={()=>((requireAuth()) ? <Redirect to="/dashboard" /> : <Login {...this.props} />)}  />
+				<Route path="/login" render={()=>((requireAuth()) ? <Redirect to="/dashboard" /> : <Login />)}  />
 				<Route exact path="/dashboard"  render={()=>((requireAuth()) ? <Dashboard /> : <Redirect to="/login" />)}  />
 				<Route exact path="/dashboard/:id"  render={()=>((requireAuth()) ? <Dashboard /> : <Redirect to="/login" />)}  />
 				<Route exact path="/not-found" render={ ()=>(<NotFound />) } />
