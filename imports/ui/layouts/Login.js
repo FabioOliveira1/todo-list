@@ -4,10 +4,11 @@ import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 // History
 import createBrowserHistory from 'history/createBrowserHistory'
-//Custom Components
-import LoginCard from '../components/LoginCard.js';
 //Bert alert
 import { Bert } from 'meteor/themeteorchef:bert';
+
+//Custom Components
+import LoginCard from '../components/LoginCard.js';
 
 const history  = createBrowserHistory();
 export default class Login  extends Component{

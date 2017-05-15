@@ -39,7 +39,7 @@ export default class LoginCard extends Component{
 					<h2 className="mdl-card__title-text">
 						<img
 							className="mdl-card__company-logo"
-							src="/img/components/login-card/logo2.png"
+							src="/img/components/login-card/logo1.png"
 							alt="Todo List Logo"/>
 
 						<strong>Todo List</strong>
@@ -74,8 +74,8 @@ export default class LoginCard extends Component{
 						</div>
 
 						<div>
-							<button className="mdl-button mdl-js-button mdl-button--raised mdl-color--yellow-100 mdl-button--raised mdl-js-ripple-effect"
-								form="form-submit-login"
+							<button className="mdl-button mdl-js-button mdl-button--raised mdl-color--blue-100 mdl-button--raised mdl-js-ripple-effect"
+
 							>
 								Entrar
 							</button>
