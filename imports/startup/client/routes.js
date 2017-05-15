@@ -1,8 +1,11 @@
+// Npm Packages
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
+// Meteor Packages
 import createBrowserHistory from 'history/createBrowserHistory'
 
+// Custom Components
 import  AppBody  from '../../ui/layouts/AppBody.js';
 import  Dashboard  from '../../ui/layouts/Dashboard.js';
 import  Login  from '../../ui/layouts/Login.js';
@@ -11,8 +14,7 @@ import  NotFound  from '../../ui/layouts/NotFound.js';
 const history = createBrowserHistory();
 const requireAuth = (currentState) => {
 	if(Meteor.user() || Meteor.loggingIn()){
-		console.log("User: ", Meteor.user());
-		console.log("LoggingIn: ", Meteor.loggingIn());
+		console.log("User: ", Meteor.user(), "LoggingIn: ", Meteor.loggingIn());
 		return true;
 	}
 
