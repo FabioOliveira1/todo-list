@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 //Custom Components
 import LoggedInUserDropdown from '../containers/LoggedInUserDropdown.js';
 
-export default class LoginCard extends Component{
+export default class NavBar extends Component{
 
 	constructor(){
 		super();

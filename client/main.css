@@ -126,6 +126,15 @@ html, body{
 		color: rgba(0,0,0,0.54);
 	}
 
+	.logged-in-user__static{
+		height: 96px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		background: url("/img/components/side-menu/background1.jpg") center / cover;
+	}
+
 	.logged-in-user__full-avatar{
 		flex:1;
 	}
@@ -141,3 +150,13 @@ html, body{
 			color:#ffffff;
 			text-shadow: 1px 1px 1px #444;
 		}
+
+/*======== SIDE MENU ========*/
+.side-menu .mdl-navigation__link{
+	line-height: 24px;
+	text-align: left;
+
+}
+.side-menu .mdl-navigation__link i.material-icons{
+	margin-right:30px;
+}
