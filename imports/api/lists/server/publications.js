@@ -8,5 +8,5 @@ Meteor.publish('lists.all', function () {
 });
 
 Meteor.publish('lists.my', function (userId) {
-  return ListsCollection.find({ createdBy: user._id });
+  return ListsCollection.find({ createdBy: userId });
 });
