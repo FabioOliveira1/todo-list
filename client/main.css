@@ -9,6 +9,12 @@ html, body{
 	height: 100%;
 }
 
+/*======== STANDARD DIVIDER ===========*/
+hr.standard-divider{
+	height: 0.5px;
+	margin: 1em 7px;
+}
+
 /*======== COMPANY LOGO ===========*/
 	.mdl-card__company-logo{
 		width: 40px;
@@ -152,11 +158,36 @@ html, body{
 		}
 
 /*======== SIDE MENU ========*/
-.side-menu .mdl-navigation__link{
-	line-height: 24px;
-	text-align: left;
+	.side-menu .mdl-navigation__link{
+		line-height: 24px;
+		text-align: left;
 
-}
-.side-menu .mdl-navigation__link i.material-icons{
-	margin-right:30px;
-}
+	}
+	.side-menu .mdl-navigation__link i.material-icons{
+		margin-right:30px;
+	}
+
+/*======== LIST CARD ========*/
+	.list-card .demo-card-wide.mdl-card {
+		width: 100%;
+	}
+	.list-card .demo-card-wide > .mdl-card__title {
+		color: #fff;
+		height: 60px;
+		background: #ffda44;
+	}
+	.list-card .demo-card-wide > .mdl-card__menu {
+		color: #fff;
+	}
+	.list-card .demo-list-action {
+		width: 100%;
+	}
+	.list-card .mdl-list__item-secondary-action{
+		cursor: pointer;
+	}
+	.list-card .mdl-list__item-done{
+		color: #888;
+	}
+	.list-card .mdl-list__item-primary-content .mdl-list__item-done{
+		text-decoration: line-through;
+	}
