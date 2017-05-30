@@ -53,6 +53,8 @@ export default class LoggedInUserDropdown extends Component{
 					<li
 						onClick={()=>{
 							let Redirect = (user, loggingIn) => {
+
+								Meteor.logout();
 								if(!user && !loggingIn)
 									Redirect(Meteor.user(), Meteor.loggingIn())
 

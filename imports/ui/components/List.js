@@ -2,6 +2,10 @@
 import { Meteor } from 'meteor/meteor';
 // Npm Packages
 import React, { Component } from 'react';
+// History
+import createBrowserHistory from 'history/createBrowserHistory'
+
+const history  = createBrowserHistory();
 
 export default class List extends Component{
 	componentDidMount(){
@@ -39,7 +43,12 @@ export default class List extends Component{
 						</button>
 
 						<ul className="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" htmlFor={`menu-actions${this.props._id}`}>
-							<li className="mdl-menu__item">Editar</li>
+							<li className="mdl-menu__item" onClick={()=>{
+								history.push("/manage-lists/" + this.props._id);
+								history.go(0);}}
+							>
+								Editar
+							</li>
 							<li disabled className="mdl-menu__item">Arquivar</li>
 							<hr className="standard-divider"/>
 							<li className="mdl-menu__item">Excluir</li>

@@ -8,9 +8,13 @@ import NavBar from '../components/NavBar.js';
 import SideMenu from '../containers/SideMenu.js';
 import Lists from '../containers/Lists.js';
 
-export default class Dashboard extends Component{
+export default class ManageLists extends Component{
+	componentDidMount(){
+		console.log("this.props: ", this.props)
+	}
 
 	render(){
+
 		return (
 			<div className="all-lists mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
 

@@ -33,6 +33,69 @@ export default class Dashboard extends Component{
 							name: "Do 3",
 							done: false
 						},
+						{
+							_id: (Date.now() * Math.random()).toString(),
+							name: "Do 1",
+							done: true
+						},
+						{
+							_id: (Date.now() * Math.random()).toString(),
+							name: "Do 2",
+							done: false
+						},
+						{
+							_id: (Date.now() * Math.random()).toString(),
+							name: "Do 3",
+							done: false
+						},
+					],
+					createdBy:Meteor.userId(),
+					roles: Meteor.user().roles
+				},
+				{
+					_id: (Date.now() * Math.random()).toString(),
+					name: "Todo 1",
+					date: new Date(2017, 4, 29).getTime(),
+					items: [
+						{
+							_id: (Date.now() * Math.random()).toString(),
+							name: "Do 1",
+							done: true
+						},
+						{
+							_id: (Date.now() * Math.random()).toString(),
+							name: "Do 2",
+							done: false
+						},
+						{
+							_id: (Date.now() * Math.random()).toString(),
+							name: "Do 3",
+							done: false
+						},
+					],
+					createdBy:Meteor.userId(),
+					roles: Meteor.user().roles
+				},
+				{
+					_id: (Date.now() * Math.random()).toString(),
+					name: "Todo 1",
+					date: new Date(2017, 4, 29).getTime(),
+					items: [
+						{
+							_id: (Date.now() * Math.random()).toString(),
+							name: "Do 1",
+							done: true
+						},
+						{
+							_id: (Date.now() * Math.random()).toString(),
+							name: "Do 2",
+							done: false
+						},
+						{
+							_id: (Date.now() * Math.random()).toString(),
+							name: "Do 3",
+							done: false
+						},
 					],
 					createdBy:Meteor.userId(),
 					roles: Meteor.user().roles
@@ -158,7 +221,6 @@ export default class Dashboard extends Component{
 	}
 
 	render(){
-		console.log(this.props)
 		return (
 			<div className="mdl-grid">
 				{this.state.test.map((list)=>(<List key={list._id} {...list} />))}

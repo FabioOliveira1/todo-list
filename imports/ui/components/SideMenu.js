@@ -2,6 +2,10 @@
 import React, { Component } from 'react';
 
 export default class SideMenu extends Component{
+	componentDidMount(){
+		componentHandler.upgradeDom();
+	}
+
 	render(){
 		return(
 			<div className="side-menu mdl-layout__drawer">
@@ -16,11 +20,11 @@ export default class SideMenu extends Component{
 					</div>
 				</div>
 				<nav className="mdl-navigation">
-					<a className="mdl-navigation__link" href="/dashboard">
+					<a className={`mdl-navigation__link ${(this.props.url.split("dashboard").length > 1) ? "selected" : ""}`} href="/dashboard">
 						<i className="material-icons">dashboard</i> Dashboard
 					</a>
-					<a className="mdl-navigation__link" href="/edit">
-						<i className="material-icons">mode_edit</i> Editar
+					<a className={`mdl-navigation__link ${(this.props.url.split("manage-lists").length > 1) ? "selected" : ""}`} href="/manage-lists">
+						<i className="material-icons">mode_edit</i> Gerenciar listas
 					</a>
 					<a className="mdl-navigation__link" href="/submit">
 						<i className="material-icons">send</i> Responder

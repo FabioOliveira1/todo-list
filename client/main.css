@@ -163,6 +163,10 @@ hr.standard-divider{
 		text-align: left;
 
 	}
+	.side-menu .mdl-navigation__link.selected{
+		background-color: #3f51b5;
+		color: #fff !important;
+	}
 	.side-menu .mdl-navigation__link i.material-icons{
 		margin-right:30px;
 	}
@@ -191,3 +195,4 @@ hr.standard-divider{
 	.list-card .mdl-list__item-primary-content .mdl-list__item-done{
 		text-decoration: line-through;
 	}
+
