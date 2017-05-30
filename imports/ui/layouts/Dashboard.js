@@ -6,12 +6,9 @@ import React, { Component } from 'react';
 //Custom Components
 import NavBar from '../components/NavBar.js';
 import SideMenu from '../containers/SideMenu.js';
+import Lists from '../containers/Lists.js';
 
 export default class Dashboard extends Component{
-
-	constructor(){
-		super();
-	}
 
 	render(){
 
@@ -20,33 +17,10 @@ export default class Dashboard extends Component{
 
 				<NavBar />
 
-				<SideMenu user={Meteor.user()}/>
+				<SideMenu />
 
 				<div className="mdl-layout__content">
-					<div className="page-content mdl-color-text--blue-grey-50">
-						<h4 className="modes__content-title">
-							head
-						</h4>
-						<div className="mdl-grid">
-							<div className="
-								mdl-cell
-								mdl-cell--6-col
-								mdl-cell--8-col-tablet
-								mdl-cell--4-col-phone
-							">
-								bd
-							</div>
-							<div className="
-								mdl-cell
-								mdl-cell--6-col
-								mdl-cell--8-col-tablet
-								mdl-cell--4-col-phone
-							">
-								db
-							</div>
-						</div>
-
-					</div>
+					<Lists />
 				</div>
 
 
