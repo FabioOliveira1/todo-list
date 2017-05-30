@@ -7,7 +7,6 @@ const history  = createBrowserHistory();
 export default class LoggedInUserDropdown extends Component{
 
 	componentDidMount(){
-		console.log("YAY: ", componentHandler)
 		componentHandler.upgradeDom('MaterialMenu', 'mdl-menu');
 	}
 
