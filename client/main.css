@@ -132,7 +132,7 @@ html, body{
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		background: url("/img/components/side-menu/background1.jpg") center / cover;
+		background: url("/img/components/side-menu/background0.jpg") center / cover;
 	}
 
 	.logged-in-user__full-avatar{
@@ -147,8 +147,8 @@ html, body{
 		text-align: center;
 	}
 		.logged-in-user__user-data h6{
-			color:#ffffff;
-			text-shadow: 1px 1px 1px #444;
+			color:#111;
+			text-shadow: 1px 1px 1px #bbb;
 		}
 
 /*======== SIDE MENU ========*/
