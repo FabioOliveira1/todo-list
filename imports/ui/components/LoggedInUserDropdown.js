@@ -58,7 +58,7 @@ export default class LoggedInUserDropdown extends Component{
 								if(!user && !loggingIn)
 									Redirect(Meteor.user(), Meteor.loggingIn())
 
-								history.push("/");
+								history.push("/login");
 								history.go(0);
 							}
 
