@@ -223,7 +223,17 @@ export default class Dashboard extends Component{
 	render(){
 		return (
 			<div className="mdl-grid">
-				{this.state.test.map((list)=>(<List key={list._id} {...list} />))}
+				{this.state.test.map((list)=>(
+					<div key={list._id} className="
+						mdl-cell
+						mdl-cell--4-col-desktop
+						mdl-cell--6-col-tablet
+						mdl-cell--12-col-phone
+						list__card
+					">
+						<List {...list} />
+					</div>
+				))}
 			</div>
 		)
 	}

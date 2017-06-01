@@ -8,16 +8,21 @@ import FormList from './FormList.js';
 import MiniListCard from './MiniListCard.js';
 
 export default class ContentManagement extends Component{
-	componentDidMount(){
-		console.log("this.props: ", this.props)
-	}
 
 	render(){
 
 		return (
 			<div className="mdl-layout__content">
 				<div className="mdl-grid">
-					<FormList />
+					<div className="
+						form-list
+						mdl-cell
+						mdl-cell--5-col-desktop
+						mdl-cell--6-col-tablet
+						mdl-cell--8-col-phone
+					">
+						<FormList list={(this.props.editingList) ? this.props.editingList : undefined} groups={this.props.groups}/>
+					</div>
 					<div className="
 						all-mini-card-list
 						mdl-cell

@@ -172,27 +172,39 @@ hr.standard-divider{
 	}
 
 /*======== LIST CARD ========*/
-	.list-card .demo-card-wide.mdl-card {
+	.list__card .demo-card-wide.mdl-card {
 		width: 100%;
 	}
-	.list-card .demo-card-wide > .mdl-card__title {
+	.list__card .demo-card-wide > .mdl-card__title {
 		color: #fff;
 		height: 60px;
-		background: #ffda44;
 	}
-	.list-card .demo-card-wide > .mdl-card__menu {
+	.list__card .demo-card-wide > .mdl-card__menu {
 		color: #fff;
 	}
-	.list-card .demo-list-action {
+	.list__card .demo-list-action {
 		width: 100%;
 	}
-	.list-card .mdl-list__item-secondary-action{
+	.list__card .mdl-list__item-secondary-action{
 		cursor: pointer;
 	}
-	.list-card .mdl-list__item-done{
+	.list__card .mdl-list__item-done{
 		color: #888;
 	}
-	.list-card .mdl-list__item-primary-content .mdl-list__item-done{
+	.list__card .mdl-list__item-primary-content .mdl-list__item-done{
 		text-decoration: line-through;
 	}
+/*======== FORM LIST ========*/
+	.list__card.preview__card{
+		padding: 5px;
+	}
+	.form-list__input-button{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.form-list__input-button .mdl-textfield{
+		flex: 8;
+	}
+
 

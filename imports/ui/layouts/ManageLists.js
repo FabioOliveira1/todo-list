@@ -10,7 +10,6 @@ import ContentManagement from '../containers/ContentManagement.js';
 
 export default class ManageLists extends Component{
 	render(){
-
 		return (
 			<div className="all-lists mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
 
