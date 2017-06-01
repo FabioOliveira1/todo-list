@@ -25,7 +25,13 @@ export default class Login  extends Component{
 						icon: "fa-times"
 					});
 				}else{
-					console.log("Logging in!");
+					Bert.alert({
+						message: "Logging in!",
+						type: "success",
+						style: "growl-top-right",
+						icon: "fa-check"
+					});
+					Meteor.call("initDatabase");
 					history.push("/dashboard");
 					history.go(0);
 				}
